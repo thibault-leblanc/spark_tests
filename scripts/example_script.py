@@ -1,12 +1,24 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, IntegerType, FloatType, StringType, DateType
 
 def main():
     spark = SparkSession.builder \
-        .appName("Example Spark Application") \
+        .appName("Dataset Example") \
         .getOrCreate()
 
-    # Exemple de lecture de données
-    data = spark.read.csv("data/sample_data.csv", header=True, inferSchema=True)
+    # Schéma explicite pour les données
+    schema = StructType([
+        StructField("transaction_id", IntegerType(), True),
+        StructField("customer_id", IntegerType(), True),
+        StructField("product_id", IntegerType(), True),
+        StructField("quantity", IntegerType(), True),
+        StructField("price", FloatType(), True),
+        StructField("total_amount", FloatType(), True),
+        StructField("transaction_date", DateType(), True)
+    ])
+
+    # Lire le fichier CSV avec le schéma spécifié
+    data = spark.read.csv("../data/sales_sample_data.csv", header=True, schema=schema)
     data.show()
 
     spark.stop()
