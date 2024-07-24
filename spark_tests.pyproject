@@ -1,20 +1,21 @@
 {
-    "files": [
-        "scripts/example_script.py",
-        "config/spark_config.py",
-        "tests/test_example.py",
-        "README.md",
-        "requirements.txt"
-    ],
     "configurations": [
         {
-            "name": "Run Configuration",
-            "interpreter": "/usr/bin/python3",
-            "workingDirectory": "${PROJECT_SOURCE_DIR}",
+            "commandLineArguments": "scripts/example_script.py",
             "environment": {
                 "PYTHONPATH": "${PROJECT_SOURCE_DIR}"
             },
-            "commandLineArguments": "scripts/example_script.py"
+            "interpreter": "/usr/bin/python3",
+            "name": "Run Configuration",
+            "workingDirectory": "${PROJECT_SOURCE_DIR}"
         }
+    ],
+    "files": [
+        "scripts/data_learn_script.py",
+        "config/spark_config.py",
+        "tests/test_example.py",
+        "README.md",
+        "requirements.txt",
+        "scripts/ml_learn_script.py"
     ]
 }
