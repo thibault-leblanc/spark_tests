@@ -20,7 +20,7 @@ schema = StructType([
     StructField("transaction_date", DateType(), True)
 ])
 
-data = spark.read.csv("../data/sales_sample_data.csv", header=True, schema=schema)
+data = spark.read.csv("../data/sales_synthetic_data.csv", header=True, schema=schema)
 
 ## Préparation des données
 feature_cols = ["quantity", "price"]

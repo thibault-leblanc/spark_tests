@@ -16,6 +16,7 @@
         "tests/test_example.py",
         "README.md",
         "requirements.txt",
-        "scripts/ml_learn_script.py"
+        "scripts/ml_learn_script.py",
+        "scripts/data_gen_script.py"
     ]
 }

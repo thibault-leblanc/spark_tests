@@ -18,7 +18,7 @@ def main():
     ])
 
     # Lire le fichier CSV avec le schéma spécifié
-    data = spark.read.csv("../data/sales_sample_data.csv", header=True, schema=schema)
+    data = spark.read.csv("../data/sales_synthetic_data.csv", header=True, schema=schema)
 
     #Lire le dataset
     data.show()
